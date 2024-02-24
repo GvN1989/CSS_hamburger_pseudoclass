@@ -9,7 +9,7 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    transition: all 0.15s ease-in-out;
 }
 
 #menu::before,
@@ -20,6 +20,7 @@
     position: absolute;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
+    transition: all 0.35s ease-in-out;
 }
 
 #menu::before{
@@ -29,8 +30,29 @@
 
 #menu::after{
     left:0;
-    top: 20px;
+    bottom: -20px;
 }
 
+#container{
+    /*border: 2px hotpink solid;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    padding: 20px 0;
+}
 
+#container:hover #menu{
+    background-color: transparent;
+}
+
+#container:hover #menu::before{
+    transform: rotate(45deg);
+    top:0;
+}
+
+#container:hover #menu::after {
+    transform: rotate(-45deg);
+    bottom:0;
+}
 
